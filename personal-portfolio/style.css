@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  /*   COLORS */
+  --main-light-grey: #cce8e6;
+  --main-dark-grey: #a8bdc5;
+  --main-navy: #0e3744;
+  --main-navy-dark: #06161b;
+  --main-red: #a13323;
+  --main-orange: #fcbf7d;
+
+  /*   LAYOUT */
+  --navbar-height: 100px;
+  --card-border-radius: 5px;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+
+  background-color: #000;
+  color: var(--main-light-grey);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+}
+main {
+  margin: var(--navbar-height) auto 0;
+}
+section {
+  scroll-margin-top: var(--navbar-height);
+}
+a,
+a:hover,
+a:visited,
+a:active {
+  color: var(--main-light-grey);
+  text-decoration: none;
+}
+
+#welcome-section,
+#projects,
+#contact {
+  border-top: 2px solid var(--main-light-grey);
+}
+
+#navbar {
+  display: flex;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  z-index: 10000;
+
+  width: 100%;
+  height: var(--navbar-height);
+  margin: 0px;
+  padding: 0px;
+
+  background-color: var(--main-red);
+  color: var(--main-light-grey);
+  border-bottom: 2px solid var(--main-light-grey);
+}
+#navbar ul {
+  display: flex;
+  flex: auto;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+
+  padding-right: 40px;
+
+  list-style: none;
+}
+#navbar a {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+
+  height: 100%;
+  padding: 0px 30px;
+
+  transition: background-color 0.3s;
+}
+#navbar a:hover {
+  background-color: var(--main-navy);
+}
+
+#welcome-section,
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--main-navy);
+
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+#welcome-section {
+  height: 100vh;
+  background-image: linear-gradient(
+    -62deg,
+    var(--main-navy-dark) 0%,
+    var(--main-navy) 100%
+  );
+}
+#welcome-section h1 {
+  font-size: 6rem;
+}
+#welcome-section p {
+  color: var(--main-red);
+  font-size: 3rem;
+  font-weight: 100;
+  font-style: italic;
+}
+
+#projects {
+  background-color: var(--main-orange);
+  color: var(--main-navy);
+}
+#projects h2 {
+  margin: 6rem auto 2rem;
+}
+.project-card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 1400px;
+  margin: auto;
+}
+.project-card {
+  display: flex;
+  flex-direction: column;
+
+  width: 400px;
+  height: 500px;
+  margin: 20px;
+
+  background-color: var(--main-navy);
+  border-radius: var(--card-border-radius);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.project-image {
+  height: 100%;
+
+  background-color: var(--main-light-grey);
+  border-top-left-radius: var(--card-border-radius);
+  border-top-right-radius: var(--card-border-radius);
+
+  object-fit: cover;
+}
+.project-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 70px;
+  margin: 0px;
+  padding: 0px;
+
+  background-color: var(--main-navy);
+  border-radius: 30px;
+}
+.button {
+  display: inline-block;
+
+  padding: 0.5rem 1rem;
+  margin: 50px;
+
+  background-color: var(--main-red);
+  transition: background-color 0.3s;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.button:hover {
+  background-color: var(--main-navy);
+  cursor: pointer;
+}
+
+#contact {
+  height: calc(100vh - var(--navbar-height));
+}
+.contact-link-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 30px;
+  transition: transform 0.3s;
+
+  font-size: 40px;
+}
+.contact-link:hover {
+  transform: translateY(10px);
+}
+.contact-icon-bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+
+  background-color: var(--main-red);
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.contact-icon-img {
+  height: 70%;
+  width: auto;
+  filter: invert(100%);
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1rem;
+  }
+}
