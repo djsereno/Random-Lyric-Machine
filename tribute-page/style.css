@@ -1,0 +1,26 @@
+body {
+  background-image: linear-gradient(rgb(210, 210, 210), rgb(120, 120, 120));
+  font-size: 18px;
+  text-align: center;
+  max-width: 1000px;
+  margin: auto;
+}
+a {
+  color: darkslategrey;
+}
+h1 {
+  font-weight: bold;
+}
+h2 {
+  font-weight: bold;
+  font-size: 22px;
+}
+img {
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#tribute-info {
+  text-align: left;
+}

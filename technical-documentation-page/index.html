@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Technical Documentation Page</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+  <nav id="navbar">
+    <header>Python</header>
+    <ul>
+      <li><a class="nav-link" href="#What_is_Python?">What is Python?</a></li>
+      <li><a class="nav-link" href="#What_Can_Python_Do?">What Can Python Do?</a></li>
+      <li><a class="nav-link" href="#Why_Python?">Why Python?</a></li>
+      <li><a class="nav-link" href="#Good_to_Know">Good to Know</a></li>
+      <li><a class="nav-link" href="#Python_Syntax_Compared_to_Other_Programming_Languages">Python Syntax Compared to Other Programming Languages</a></li>
+      <li><a class="nav-link" href="#Hello_World">Hello World</a></li>
+      <li><a class="nav-link" href="#Variables">Variables</a></li>
+      <li><a class="nav-link" href="#Creating_Variables">Creating Variables</a></li>
+      <li><a class="nav-link" href="#Global_Variables">Global Variables</a></li>
+      <li><a class="nav-link" href="#Built-In_Data_Types">Built-In Data Types</a></li>
+      <li><a class="nav-link" href="#Python_Conditions_and_If_Statements">Python Conditions and If Statements</a></li>
+      <li><a class="nav-link" href="#The_While_Loop">The While Loop</a></li>
+      <li><a class="nav-link" href="#Creating_a_Function">Creating a Function</a></li>
+      <li><a class="nav-link" href="#Reference">Reference</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-doc">
+    <section class="main-section" id="What_is_Python?">
+      <header>What is Python?</header>
+      <p>Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.</p>
+      <p>It is used for:</p>
+      <ul>
+        <li>web development (server-side),</li>
+        <li>software development,</li>
+        <li>mathematics,</li>
+        <li>system scripting.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="What_Can_Python_Do?">
+      <header>What Can Python Do?</header>
+      <ul>
+        <li>Python can be used on a server to create web applications.</li>
+        <li>Python can be used alongside software to create workflows.</li>
+        <li>Python can connect to database systems. It can also read and modify files.</li>
+        <li>Python can be used to handle big data and perform complex mathematics.</li>
+        <li>Python can be used for rapid prototyping, or for production-ready software development.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Why_Python?">
+      <header>Why Python?</header>
+      <ul>
+        <li>Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc).</li>
+        <li>Python has a simple syntax similar to the English language.</li>
+        <li>Python has syntax that allows developers to write programs with fewer lines than some other programming languages.</li>
+        <li>Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick.</li>
+        <li>Python can be treated in a procedural way, an object-oriented way or a functional way.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Good_to_Know">
+      <header>Good to Know</header>
+      <ul>
+        <li>The most recent major version of Python is Python 3, which we shall be using in this tutorial. However, Python 2, although not being updated with anything other than security updates, is still quite popular.</li>
+        <li>In this tutorial Python will be written in a text editor. It is possible to write Python in an Integrated Development Environment, such as Thonny, Pycharm, Netbeans or Eclipse which are particularly useful when managing larger collections of Python files.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Python_Syntax_Compared_to_Other_Programming_Languages">
+      <header>Python Syntax Compared to Other Programming Languages</header>
+      <ul>
+        <li>Python was designed for readability, and has some similarities to the English language with influence from mathematics.</li>
+        <li>Python uses new lines to complete a command, as opposed to other programming languages which often use semicolons or parentheses.</li>
+        <li>Python relies on indentation, using whitespace, to define scope; such as the scope of loops, functions and classes. Other programming languages often use curly-brackets for this purpose.</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Hello_World">
+      <header>Hello World</header>
+      <code class="block">print("Hello, World!")</code>
+    </section>
+
+    <section class="main-section" id="Variables">
+      <header>Variables</header>
+      <p>Variables are containers for storing data values.</p>
+    </section>
+
+    <section class="main-section" id="Creating_Variables">
+      <header>Creating Variables</header>
+      <p>Python has no command for declaring a variable. A variable is created the moment you first assign a value to it.</p>
+      <code class="block">x = 5<br>y = "John"<br>print(x)<br>print(y)</code>
+      <p>Variables do not need to be declared with any particular type, and can even change type after they have been set.</p>
+      <code class="block">x = 4 # x is of type int<br>x = "Sally" # x is now of type str<br>print(x)</code>
+    </section>
+
+    <section class="main-section" id="Global_Variables">
+      <header>Global Variables</header>
+      <p>Variables that are created outside of a function (as in all of the examples above) are known as global variables.</p>
+      <p>Global variables can be used by everyone, both inside of functions and outside.</p>
+      <code class="block">x = "awesome"<br><br>def myfunc():<br>&nbsp;&nbsp;&nbsp;&nbsp;print("Python is " + x)<br><br>myfunc()</code>
+      <p>If you create a variable with the same name inside a function, this variable will be local, and can only be used inside the function. The global variable with the same name will remain as it was, global and with the original value.</p>
+    </section>
+
+    <section class="main-section" id="Built-In_Data_Types">
+      <header>Built-In Data Types</header>
+      <p>In programming, data type is an important concept.</p>
+      <p>Variables can store data of different types, and different types can do different things.</p>
+      <p>Python has the following data types built-in by default, in these categories:</p>
+      <ul>
+        <li>Text Type: <code>str</code></li>
+        <li>Numeric Types: <code>int</code> , <code>float</code> , <code>complex</code></li>
+        <li>Sequence Types: <code>list</code> , <code>tuple</code> , <code> range</code></li>
+        <li>Mapping Type: <code>dict</code></li>
+        <li>Set Types: <code>set</code> , <code>frozenset</code></li>
+        <li>Boolean Type: <code>bool</code></li>
+        <li>Binary Types: <code>bytes</code> , <code>bytearray</code> , <code> memoryview</code></li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Python_Conditions_and_If_Statements">
+      <header>Python Conditions and If Statements</header>
+      <p>Python supports the usual logical conditions from mathematics:</p>
+      <ul>
+        <li>Equals: <code>a == b</code></li>
+        <li>Not Equals: <code>a != b</code></li>
+        <li>Less than: <code>a &#60; b</code></li>
+        <li>Less than or equal to: <code>a &#60;= b</code></li>
+        <li>Greater than: <code>a > b</code></li>
+        <li>Greater than or equal to: <code>a >= b</code></li>
+      </ul>
+      <p>These conditions can be used in several ways, most commonly in "if statements" and loops.</p>
+      <p>An "if statement" is written by using the <code>if</code> keyword.</p>
+      <code class="block">a = 33<br>b = 200<br>if b > a:<br>&nbsp;&nbsp;&nbsp;&nbsp;print("b is greater than a")</code>
+    </section>
+
+    <section class="main-section" id="The_While_Loop">
+      <header>The While Loop</header>
+      <p>With the <code>while</code> loop we can execute a set of statements as long as a condition is true.</p>
+      <code class="block">i = 1<br>while i &#60; 6:<br>&nbsp;&nbsp;&nbsp;&nbsp;print(i)<br>&nbsp;&nbsp;&nbsp;&nbsp;i += 1</code>
+    </section>
+
+    <section class="main-section" id="Creating_a_Function">
+      <header>Creating a Function</header>
+      <p>A function is a block of code which only runs when it is called.</p>
+      <p>You can pass data, known as parameters, into a function.</p>
+      <p>A function can return data as a result.</p>
+      <p>In Python a function is defined using the def keyword:</p>
+      <code class="block">def my_function():<br>&nbsp;&nbsp;&nbsp;&nbsp;print("Hello from a function")</code>
+    </section>
+
+    <section class="main-section" id="Reference">
+      <header>Reference</header>
+      <p>All the documentation in this page is taken from <a href="https://www.w3schools.com/python/default.asp" target="_blank">W3Schools</a>.</p>
+    </section>
+
+  </main>
+</body>
+<!-- partial -->
+  <script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'></script>
+</body>
+</html>
