@@ -58,6 +58,10 @@ code.block {
   list-style: none;
   position: relative;
   width: 100%;
+  transition: background-color 0.2s;
+}
+#navbar li:hover {
+  background-color: #f7f7f7;
 }
 #navbar a {
   color: #000;
