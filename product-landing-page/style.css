@@ -1,9 +1,3 @@
-@media screen and (min-width: 900px) {
-  article {
-    padding: 1rem 3rem;
-  }
-}
-
 body {
   line-height: 1.5;
   padding: 0;
@@ -14,7 +8,7 @@ body {
 }
 h1 {
   font-weight: bold;
-  font-size: 64px;
+  font-size: 3rem;
   text-transform: uppercase;
   margin: auto auto;
   padding-bottom: 50px;
@@ -76,4 +70,13 @@ footer {
 footer p {
   margin: 0;
   padding: 0;
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 3rem;
+  }
+  video {
+    width: 100%;
+  }
 }

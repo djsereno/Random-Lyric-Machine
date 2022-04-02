@@ -11,6 +11,13 @@ main {
   top: 0px;
   left: 300px;
 }
+footer {
+  padding-top: 1rem;
+  border-top: 2px solid #202a35;
+  font-style: italic;
+  text-align: center;
+}
+
 section {
   margin: 10px;
   padding: 10px;

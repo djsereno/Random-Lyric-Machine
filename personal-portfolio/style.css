@@ -36,6 +36,16 @@ body {
 main {
   margin: var(--navbar-height) auto 0;
 }
+footer {
+  padding: 1rem;
+  background-color: var(--main-navy);
+  font-size: 1rem;
+  font-style: italic;
+}
+footer a {
+  text-decoration: underline;
+}
+
 section {
   scroll-margin-top: var(--navbar-height);
 }
@@ -49,7 +59,8 @@ a:active {
 
 #welcome-section,
 #projects,
-#contact {
+#contact,
+footer {
   border-top: 2px solid var(--main-light-grey);
 }
 
@@ -146,12 +157,16 @@ a:active {
   flex-direction: column;
 
   width: 400px;
-  height: 500px;
+  height: 400px;
   margin: 20px;
 
   background-color: var(--main-navy);
   border-radius: var(--card-border-radius);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: transform 0.3s;
+}
+.project-card:hover {
+  transform: scale(105%);
 }
 .project-image {
   height: 100%;
@@ -161,6 +176,7 @@ a:active {
   border-top-right-radius: var(--card-border-radius);
 
   object-fit: cover;
+  object-position: 50% 0;
 }
 .project-title {
   display: flex;
