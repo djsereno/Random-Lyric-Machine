@@ -7,11 +7,12 @@ header {
   font-weight: bold;
 }
 main {
-  position: relative;
+  position: absolute;
   top: 0px;
   left: 300px;
 }
 footer {
+  text-align: left;
   padding-top: 1rem;
   border-top: 2px solid #202a35;
   font-style: italic;
@@ -19,6 +20,7 @@ footer {
 }
 
 section {
+  left: 300px;
   margin: 10px;
   padding: 10px;
 }
