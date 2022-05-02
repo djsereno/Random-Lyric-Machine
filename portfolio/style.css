@@ -14,11 +14,16 @@
   --color-navy: #0e3744;
   --color-navy-dark: #06161b;
   --color-primary: #a13323;
+  --color-primary-rgb: 161, 51, 35;
   --color-secondary: #fcbf7d;
 
   /*   LAYOUT */
   --navbar-height: 100px;
-  --card-border-radius: 5px;
+  --card-border-radius: 8px;
+}
+
+html {
+  font-size: 16px;
 }
 
 body {
@@ -28,6 +33,7 @@ body {
 
 section {
   min-height: 100vh;
+  max-height: 100%;
 }
 
 #intro-section {
@@ -42,11 +48,6 @@ section {
 
 #projects-section {
   background-color: var(--color-grey-medium);
-  color: var(--color-navy-dark);
-}
-
-#timeline-section {
-  background-color: var(--color-white);
   color: var(--color-navy-dark);
 }
 
@@ -93,18 +94,88 @@ section {
   padding: 0px;
 
   background-color: var(--main-navy);
-  border-radius: 30px;
+  border-radius: var(--card-border-radius);
 }
 
 /* TIMELINE */
-.timeline h2 {
-    color: var(--color-primary)
+#timeline-section {
+  background-color: var(--color-white);
+  color: var(--color-navy-dark);
 }
 
-.timeline-entry-right {
-  text-align: left;
+.timeline {
+  position: relative;
+  margin: 50px auto;
+  padding: 40px 0;
+  background-color: pink;
+  width: 60%;
+}
+.timeline ul {
+  margin: 0;
+  padding: 0;
+}
+.timeline ul .center-line {
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  background-color: var(--color-grey-medium);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.timeline ul li {
+  position: relative;
+  width: 50%;
+  padding: 1.5em;
+  margin: 0 -1em 1em ;
+  list-style: none;
+  background-color: var(--color-grey-medium);
+  border-radius: var(--card-border-radius);
 }
 
-.timeline-entry-left {
-  text-align: right;
+.timeline .date {
+  position: absolute;
+  background-color: var(--color-primary);
+  margin: 0;
+  padding: 0.5em 1em;
+  border-radius: 2em;
+  box-shadow: 0 0 0 4px rgba(var(--color-primary-rgb), 0.5);
+  font-size: 1em;
+}
+.timeline ul li.left {
+  float: left;
+  clear: both;
+}
+.timeline ul li.left .date {
+  right: 0;
+}
+.timeline ul li.right {
+  float: right;
+  clear: both;
+}
+.timeline ul li.right .date {
+  left: 0;
+}
+
+/* timeline bullet point */
+.timeline ul li:before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(var(--color-primary-rgb), 0.5);
+}
+
+.timeline .title {
+  font-size: 1em;
+}
+.timeline .location {
+  font-size: 1em;
+}
+.timeline .city {
+  font-size: 1em;
+}
+.timeline .description {
+  font-size: 1em;
 }
