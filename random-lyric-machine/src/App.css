@@ -13,12 +13,14 @@
 
 html {
   font-size: x-large;
+  
 }
 
 body {
   margin: 0px;
   padding: 0px;
   width: 100%;
+  font-family: 'Macondo', cursive, !important;
 
   background-color: var(--color-primary);
   font-family: "Roboto", sans-serif;
@@ -105,9 +107,9 @@ a:active {
   font-size: x-large;
 }
 
-.fa-quote-left {
+.fa-quote-left, .fa-music {
   padding-right: 0.5rem;
 }
-.fa-quote-right, .fa-music {
+.fa-quote-right {
   padding-left: 0.5rem;
 }

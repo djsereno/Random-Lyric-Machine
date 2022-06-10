@@ -2,6 +2,16 @@ import React from "react";
 import "./App.css";
 
 const lyricData = require("./random-lyrics.json");
+const colors = [
+  "#9e0142",
+  "#d53e4f",
+  "#f46d43",
+  "#fdae61",
+  "#abdda4",
+  "#66c2a5",
+  "#3288bd",
+  "#5e4fa2",
+];
 
 class App extends React.Component {
   constructor(props) {
@@ -28,10 +38,11 @@ class App extends React.Component {
     return (
       <div id="quote-box">
         <p id="text">
-          <i class="fa-solid fa-quote-left"></i>
+          <i className="fa-solid fa-quote-left"></i>
           {this.state.lyric}
-          <i class="fa-solid fa-quote-right"></i>
+          <i className="fa-solid fa-quote-right"></i>
         </p>
+
         <p id="author">- {this.state.artist}</p>
 
         <div className="buttons">
@@ -41,23 +52,25 @@ class App extends React.Component {
             href="twitter.com/intent/tweet"
             target={"_blank"}
           >
-            <i class="fa-brands fa-twitter"></i>
+            <i className="fa-brands fa-twitter"></i>
           </a>
+
           <a
             id="github-link"
             className="button"
             href="https://github.com/djsereno"
             target={"_blank"}
           >
-            <i class="fa-brands fa-github"></i>
+            <i className="fa-brands fa-github"></i>
           </a>
+
           <button
             id="new-quote"
             className="button"
             onClick={() => this.updateLyric()}
           >
+            <i className="fa-solid fa-music"></i>
             New Lyric
-            <i class="fa-solid fa-music"></i>
           </button>
         </div>
       </div>
@@ -66,6 +79,10 @@ class App extends React.Component {
 }
 
 function getRandomLyric() {
+  let newColor = colors[Math.floor(Math.random() * colors.length)];
+  document
+    .querySelector(":root")
+    .style.setProperty("--color-primary", newColor);
   return lyricData[Math.floor(Math.random() * lyricData.length)];
 }
 
