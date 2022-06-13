@@ -7,8 +7,8 @@
 
 :root {
   /*   COLORS */
-  --color-primary: #16a085;
-  --color-card: #fff;
+  --color-primary: white;
+  --color-card: white;
 }
 
 html {
@@ -16,6 +16,7 @@ html {
 }
 
 body {
+  animation: fade-bg-in 1s;
   margin: 0px;
   padding: 0px;
   width: 100%;
@@ -29,19 +30,7 @@ a:link {
   text-decoration: none;
 }
 
-/* a:visited {
-  text-decoration: none;
-} */
-
-/* a:hover {
-  text-decoration: none;
-}
-
-a:active {
-  text-decoration: none;
-} */
-
-@keyframes fade-bg-color {
+@keyframes fade-bg-in {
   from {
     background-color: white;
   }
@@ -50,7 +39,7 @@ a:active {
   }
 }
 
-@keyframes fade-text-color {
+@keyframes fade-text-in {
   from {
     color: white;
   }
@@ -59,16 +48,8 @@ a:active {
   }
 }
 
-.test {
-  background-color: magenta;
-}
-
-.fade-bg-color {
-  animation: fade-bg-color 2s;
-}
-
-.fade-text-color {
-  animation: fade-text-color 2s;
+.fade-color {
+  /* transition: all 1s ease; */
 }
 
 #quote-box {
@@ -85,6 +66,10 @@ a:active {
   background-color: var(--color-card);
   color: var(--color-primary);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#lyric-and-artist {
+  animation: fade-text-in 1s;
 }
 
 #text {
@@ -109,6 +94,7 @@ a:active {
 }
 
 .button {
+  animation: fade-bg-in 1s;
   display: flex;
   align-items: center;
   justify-content: center;

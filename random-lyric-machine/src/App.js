@@ -19,16 +19,36 @@ class App extends React.Component {
     this.state = {
       lyric: null,
       artist: null,
-      animate: true
+      color: "white",
     };
   }
 
+  updateColor() {
+    // Update background color
+    let newColors = colors.filter((color) => color != this.state.color);
+    let newColor = newColors[Math.floor(Math.random() * newColors.length)];
+    document
+      .querySelector(":root")
+      .style.setProperty("--color-primary", newColor);
+
+    this.setState({
+      color: newColor,
+    });
+  }
+
   updateLyric() {
-    const randomLyric = getRandomLyric();
+    // Get new lyric
+    let newLyrics = lyricData.filter(
+      (lyric) => lyric.lyric != this.state.lyric
+    );
+    let randomLyric = newLyrics[Math.floor(Math.random() * newLyrics.length)];
+
     this.setState({
       lyric: randomLyric.lyric,
       artist: randomLyric.artist,
     });
+
+    this.updateColor();
   }
 
   render() {
@@ -38,7 +58,7 @@ class App extends React.Component {
 
     return (
       <div id="quote-box">
-        <div id="lyric-and-artist" className="fade-text-color">
+        <div id="lyric-and-artist" className="fade-color">
           <p id="text">
             <i className="fa-solid fa-quote-left"></i>
             {this.state.lyric}
@@ -51,7 +71,7 @@ class App extends React.Component {
         <div className="buttons">
           <a
             id="tweet-quote"
-            className="button fade-bg-color"
+            className="button fade-color"
             href="twitter.com/intent/tweet"
             target={"_blank"}
           >
@@ -60,7 +80,7 @@ class App extends React.Component {
 
           <a
             id="github-link"
-            className="button fade-bg-color"
+            className="button fade-color"
             href="https://github.com/djsereno"
             target={"_blank"}
           >
@@ -69,8 +89,11 @@ class App extends React.Component {
 
           <button
             id="new-quote"
-            className="button fade-bg-color"
-            onClick={() => this.updateLyric()}
+            className="button fade-color"
+            onClick={() => {
+              this.updateLyric();
+              this.updateColor();
+            }}
           >
             <i className="fa-solid fa-music"></i>
             New Lyric
@@ -79,16 +102,6 @@ class App extends React.Component {
       </div>
     );
   }
-}
-
-function getRandomLyric() {
-  // Get new background color and update animation
-  let newColor = colors[Math.floor(Math.random() * colors.length)];
-  document
-    .querySelector(":root")
-    .style.setProperty("--color-primary", newColor);
-
-  return lyricData[Math.floor(Math.random() * lyricData.length)];
 }
 
 export default App;
