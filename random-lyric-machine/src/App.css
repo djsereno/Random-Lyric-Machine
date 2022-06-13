@@ -49,7 +49,7 @@ a:link {
 }
 
 .fade-color {
-  /* transition: all 1s ease; */
+  transition: color 1s, background-color 1s;
 }
 
 #quote-box {
