@@ -15,16 +15,6 @@ html {
   font-size: x-large;
 }
 
-body {
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-  /* font-family: 'Macondo', cursive, !important; */
-
-  background-color: var(--color-primary);
-  font-family: "Roboto", sans-serif;
-}
-
 #background-wrapper {
   margin: 0px;
   padding: 0px;
@@ -60,15 +50,15 @@ a:link {
 
 .fade-color {
   /* This handles color fade on 'new lyric' button click. Initial fade-in from white handled with CSS animation */
-  transition: color 1s, background-color 1s;
+  transition: color 2s, background-color 2s;
 }
 
 .fade-in-bg {
-  animation: fade-bg-in 1s;
+  animation: fade-bg-in 2s;
 }
 
 .fade-in-text {
-  animation: fade-text-in 1s;
+  animation: fade-text-in 2s;
 }
 
 #quote-box {
