@@ -13,14 +13,13 @@
 
 html {
   font-size: x-large;
-  
 }
 
 body {
   margin: 0px;
   padding: 0px;
   width: 100%;
-  font-family: 'Macondo', cursive, !important;
+  /* font-family: 'Macondo', cursive, !important; */
 
   background-color: var(--color-primary);
   font-family: "Roboto", sans-serif;
@@ -41,6 +40,36 @@ a:link {
 a:active {
   text-decoration: none;
 } */
+
+@keyframes fade-bg-color {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: var(--color-primary);
+  }
+}
+
+@keyframes fade-text-color {
+  from {
+    color: white;
+  }
+  to {
+    color: var(--color-primary);
+  }
+}
+
+.test {
+  background-color: magenta;
+}
+
+.fade-bg-color {
+  animation: fade-bg-color 2s;
+}
+
+.fade-text-color {
+  animation: fade-text-color 2s;
+}
 
 #quote-box {
   margin: auto;
@@ -65,13 +94,14 @@ a:active {
   padding: 1rem 0rem 1rem;
   text-align: right;
   font-size: large;
+  font-style: italic;
 }
 
 #new-quote {
   text-align: right;
 }
 
-.buttons {
+.buttons {  
   display: flex;
   flex-direction: row;
   justify-content: flex-start;

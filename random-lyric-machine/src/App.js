@@ -19,6 +19,7 @@ class App extends React.Component {
     this.state = {
       lyric: null,
       artist: null,
+      animate: true
     };
   }
 
@@ -37,18 +38,20 @@ class App extends React.Component {
 
     return (
       <div id="quote-box">
-        <p id="text">
-          <i className="fa-solid fa-quote-left"></i>
-          {this.state.lyric}
-          <i className="fa-solid fa-quote-right"></i>
-        </p>
+        <div id="lyric-and-artist" className="fade-text-color">
+          <p id="text">
+            <i className="fa-solid fa-quote-left"></i>
+            {this.state.lyric}
+            <i className="fa-solid fa-quote-right"></i>
+          </p>
 
-        <p id="author">- {this.state.artist}</p>
+          <p id="author">- {this.state.artist}</p>
+        </div>
 
         <div className="buttons">
           <a
             id="tweet-quote"
-            className="button"
+            className="button fade-bg-color"
             href="twitter.com/intent/tweet"
             target={"_blank"}
           >
@@ -57,7 +60,7 @@ class App extends React.Component {
 
           <a
             id="github-link"
-            className="button"
+            className="button fade-bg-color"
             href="https://github.com/djsereno"
             target={"_blank"}
           >
@@ -66,7 +69,7 @@ class App extends React.Component {
 
           <button
             id="new-quote"
-            className="button"
+            className="button fade-bg-color"
             onClick={() => this.updateLyric()}
           >
             <i className="fa-solid fa-music"></i>
@@ -79,10 +82,12 @@ class App extends React.Component {
 }
 
 function getRandomLyric() {
+  // Get new background color and update animation
   let newColor = colors[Math.floor(Math.random() * colors.length)];
   document
     .querySelector(":root")
     .style.setProperty("--color-primary", newColor);
+
   return lyricData[Math.floor(Math.random() * lyricData.length)];
 }
 
