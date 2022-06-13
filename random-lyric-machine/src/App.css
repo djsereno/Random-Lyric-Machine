@@ -16,7 +16,6 @@ html {
 }
 
 body {
-  animation: fade-bg-in 1s;
   margin: 0px;
   padding: 0px;
   width: 100%;
@@ -49,7 +48,16 @@ a:link {
 }
 
 .fade-color {
+  /* This handles color fade on 'new lyric' button click. Initial fade-in from white handled with CSS animation */
   transition: color 1s, background-color 1s;
+}
+
+.fade-in-bg {
+  animation: fade-bg-in 1s;
+}
+
+.fade-in-text {
+  animation: fade-text-in 1s;
 }
 
 #quote-box {
@@ -66,10 +74,6 @@ a:link {
   background-color: var(--color-card);
   color: var(--color-primary);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-#lyric-and-artist {
-  animation: fade-text-in 1s;
 }
 
 #text {
@@ -94,7 +98,6 @@ a:link {
 }
 
 .button {
-  animation: fade-bg-in 1s;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -58,7 +58,7 @@ class App extends React.Component {
 
     return (
       <div id="quote-box">
-        <div id="lyric-and-artist" className="fade-color">
+        <div id="lyric-and-artist" className="fade-color fade-in-text">
           <p id="text">
             <i className="fa-solid fa-quote-left"></i>
             {this.state.lyric}
@@ -71,7 +71,7 @@ class App extends React.Component {
         <div className="buttons">
           <a
             id="tweet-quote"
-            className="button fade-color"
+            className="button fade-color fade-in-bg"
             href="twitter.com/intent/tweet"
             target={"_blank"}
           >
@@ -80,7 +80,7 @@ class App extends React.Component {
 
           <a
             id="github-link"
-            className="button fade-color"
+            className="button fade-color fade-in-bg"
             href="https://github.com/djsereno"
             target={"_blank"}
           >
@@ -89,7 +89,7 @@ class App extends React.Component {
 
           <button
             id="new-quote"
-            className="button fade-color"
+            className="button fade-color fade-in-bg"
             onClick={() => {
               this.updateLyric();
               this.updateColor();
