@@ -57,47 +57,49 @@ class App extends React.Component {
     }
 
     return (
-      <div id="quote-box">
-        <div id="lyric-and-artist" className="fade-color fade-in-text">
-          <p id="text">
-            <i className="fa-solid fa-quote-left"></i>
-            {this.state.lyric}
-            <i className="fa-solid fa-quote-right"></i>
-          </p>
+      <div id="background-wrapper" className="fade-color fade-in-bg">
+        <div id="quote-box">
+          <div id="lyric-and-artist" className="fade-color fade-in-text">
+            <p id="text">
+              <i className="fa-solid fa-quote-left"></i>
+              {this.state.lyric}
+              <i className="fa-solid fa-quote-right"></i>
+            </p>
 
-          <p id="author">- {this.state.artist}</p>
-        </div>
+            <p id="author">- {this.state.artist}</p>
+          </div>
 
-        <div className="buttons">
-          <a
-            id="tweet-quote"
-            className="button fade-color fade-in-bg"
-            href="twitter.com/intent/tweet"
-            target={"_blank"}
-          >
-            <i className="fa-brands fa-twitter"></i>
-          </a>
+          <div className="buttons">
+            <a
+              id="tweet-quote"
+              className="button fade-color fade-in-bg"
+              href="twitter.com/intent/tweet"
+              target={"_blank"}
+            >
+              <i className="fa-brands fa-twitter"></i>
+            </a>
 
-          <a
-            id="github-link"
-            className="button fade-color fade-in-bg"
-            href="https://github.com/djsereno"
-            target={"_blank"}
-          >
-            <i className="fa-brands fa-github"></i>
-          </a>
+            <a
+              id="github-link"
+              className="button fade-color fade-in-bg"
+              href="https://github.com/djsereno"
+              target={"_blank"}
+            >
+              <i className="fa-brands fa-github"></i>
+            </a>
 
-          <button
-            id="new-quote"
-            className="button fade-color fade-in-bg"
-            onClick={() => {
-              this.updateLyric();
-              this.updateColor();
-            }}
-          >
-            <i className="fa-solid fa-music"></i>
-            New Lyric
-          </button>
+            <button
+              id="new-quote"
+              className="button fade-color fade-in-bg"
+              onClick={() => {
+                this.updateLyric();
+                this.updateColor();
+              }}
+            >
+              <i className="fa-solid fa-music"></i>
+              New Lyric
+            </button>
+          </div>
         </div>
       </div>
     );
