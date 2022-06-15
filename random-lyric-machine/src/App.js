@@ -16,57 +16,52 @@ const colors = [
 class App extends React.Component {
   constructor(props) {
     super(props);
+    let color = setNewColor("", colors);
+    let randomLyric = setNewLyric("", lyricData);
     this.state = {
-      lyric: null,
-      artist: null,
-      color: "white",
+      lyric: randomLyric.lyric,
+      artist: randomLyric.artist,
+      color: color,
       fadeOutActive: false,
-      fadeInActive: false,
+      fadeInActive: true,
     };
   }
 
-  updateColor() {
-    let cssRoot = document.querySelector(":root");
-    let newColors = colors.filter((color) => color != this.state.color);
-    let newColor = newColors[Math.floor(Math.random() * newColors.length)];
-    cssRoot.style.setProperty("--color-bg", newColor);
-    cssRoot.style.setProperty("--color-font", newColor);
+  updateColor = () => {
+    let newColor = setNewColor(this.state.color, colors);
     this.setState({
       color: newColor,
     });
-  }
+  };
 
-  fadeOut() {
-    this.setState({
-      fadeOutActive: true,
-    });
-    let cssRoot = document.querySelector(":root");
-    let cardColor = getComputedStyle(cssRoot).getPropertyValue("--color-card");
-    cssRoot.style.setProperty("--color-font", cardColor);
-  }
-
-  updateLyric() {
-    let newLyrics = lyricData.filter(
-      (lyric) => lyric.lyric != this.state.lyric
-    );
-    let randomLyric = newLyrics[Math.floor(Math.random() * newLyrics.length)];
-
+  updateLyric = () => {
+    let randomLyric = setNewLyric(this.state.lyric, lyricData);
     this.setState({
       lyric: randomLyric.lyric,
       artist: randomLyric.artist,
     });
 
     this.updateColor();
-  }
+  };
 
-  handleClick() {
-    // Ignore input while fading animating
+  fadeOut = () => {
+    this.setState({
+      fadeOutActive: true,
+    });
+    let cssRoot = document.querySelector(":root");
+    let cardColor = getComputedStyle(cssRoot).getPropertyValue("--color-card");
+    cssRoot.style.setProperty("--color-font", cardColor);
+  };
+
+  handleClick = () => {
+    // Ignore input while animating
     if (!this.state.fadeInActive && !this.state.fadeOutActive) {
       this.fadeOut();
     }
-  }
+  };
 
   handleTransitionEnd = (event) => {
+    // Fade in and fade out handled with CSS transitions
     if (this.state.fadeOutActive) {
       this.setState({
         fadeOutActive: false,
@@ -80,16 +75,23 @@ class App extends React.Component {
     }
   };
 
-  render() {
-    if (!this.state.lyric) {
-      this.updateLyric();
+  handleAnimationEnd = (event) => {
+    // Fade in during beginning handled with CSS animation
+    if (this.state.fadeInActive) {
+      this.setState({
+        fadeInActive: false,
+      });
     }
+  };
+
+  render() {
 
     return (
       <div
         id="background-wrapper"
         className="fade-color fade-in-bg"
         onTransitionEnd={this.handleTransitionEnd}
+        onAnimationEnd={this.handleAnimationEnd}
       >
         <div id="quote-box">
           <div id="lyric-and-artist" className="fade-color fade-in-text">
@@ -107,7 +109,8 @@ class App extends React.Component {
               id="tweet-quote"
               className="button fade-color fade-in-bg"
               href="twitter.com/intent/tweet"
-              target={"_blank"}
+              target="_blank"
+              rel="noreferrer"
             >
               <i className="fa-brands fa-twitter"></i>
             </a>
@@ -116,7 +119,8 @@ class App extends React.Component {
               id="github-link"
               className="button fade-color fade-in-bg"
               href="https://github.com/djsereno"
-              target={"_blank"}
+              target="_blank"
+              rel="noreferrer"
             >
               <i className="fa-brands fa-github"></i>
             </a>
@@ -137,5 +141,19 @@ class App extends React.Component {
     );
   }
 }
+
+const setNewColor = (currentColor, colors) => {
+  let newColors = colors.filter((color) => color !== currentColor);
+  let newColor = newColors[Math.floor(Math.random() * newColors.length)];
+  let cssRoot = document.querySelector(":root");
+  cssRoot.style.setProperty("--color-bg", newColor);
+  cssRoot.style.setProperty("--color-font", newColor);
+  return newColor;
+};
+
+const setNewLyric = (currentLyric, lyrics) => {
+  let newLyrics = lyrics.filter((lyric) => lyric.lyric !== currentLyric);
+  return newLyrics[Math.floor(Math.random() * newLyrics.length)];
+};
 
 export default App;

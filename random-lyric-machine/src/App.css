@@ -16,14 +16,6 @@ html {
   font-size: x-large;
 }
 
-#background-wrapper {
-  margin: 0px;
-  padding: 0px;
-  width: 100%;
-  height: 100vh;
-  background-color: var(--color-bg);
-}
-
 a:link {
   text-decoration: none;
 }
@@ -46,29 +38,39 @@ a:link {
   }
 }
 
-.fade-color {
-  /* This handles color fade on 'new lyric' button click. Initial fade-in from white handled with CSS animation */
-  transition: color 1.5s, background-color 1.5s;
-}
-
 .fade-in-bg {
-  animation: fade-bg-in 2s;
+  /* This handles initial background fade-in */
+  animation: fade-bg-in 3s;
 }
 
 .fade-in-text {
-  animation: fade-text-in 2s;
+  /* This handles initial text fade-in */
+  animation: fade-text-in 3s;
+}
+
+.fade-color {
+  /* This handles color fade on 'new lyric' button click. */
+  transition: color 1.5s, background-color 1.5s;
+}
+
+#background-wrapper {
+  width: 100%;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  background-color: var(--color-bg);
 }
 
 #quote-box {
-  margin: auto;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  padding: 2rem;
   width: 600px;
   height: auto;
+  margin: auto;
+  padding: 2rem;
   border-radius: 4px;
 
   background-color: var(--color-card);
@@ -87,10 +89,6 @@ a:link {
   font-style: italic;
 }
 
-#new-quote {
-  text-align: right;
-}
-
 .buttons {
   display: flex;
   flex-direction: row;
@@ -99,33 +97,33 @@ a:link {
 }
 
 .button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 40px;
   min-width: 40px;
   max-width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   border-radius: 4px;
   background-color: var(--color-bg);
   color: var(--color-card);
-  cursor: pointer;
   font-size: large;
-  font-family: 'Comfortaa', cursive;
+  font-family: "Comfortaa", cursive;
+  cursor: pointer;
 }
 
 .button:hover {
   filter: brightness(110%);
 }
 
-#new-quote {
-  padding: 0rem 1rem 0rem;
-  margin-left: auto;
-  border: none;
-}
-
 .button i {
   font-size: x-large;
+}
+
+#new-quote {
+  margin-left: auto;
+  padding: 0rem 1rem 0rem;
+  border: none;
 }
 
 .fa-quote-left,
