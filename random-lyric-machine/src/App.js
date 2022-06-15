@@ -20,24 +20,32 @@ class App extends React.Component {
       lyric: null,
       artist: null,
       color: "white",
+      fadeOutActive: false,
+      fadeInActive: false,
     };
   }
 
   updateColor() {
-    // Update background color
+    let cssRoot = document.querySelector(":root");
     let newColors = colors.filter((color) => color != this.state.color);
     let newColor = newColors[Math.floor(Math.random() * newColors.length)];
-    document
-      .querySelector(":root")
-      .style.setProperty("--color-primary", newColor);
-
+    cssRoot.style.setProperty("--color-bg", newColor);
+    cssRoot.style.setProperty("--color-font", newColor);
     this.setState({
       color: newColor,
     });
   }
 
+  fadeOut() {
+    this.setState({
+      fadeOutActive: true,
+    });
+    let cssRoot = document.querySelector(":root");
+    let cardColor = getComputedStyle(cssRoot).getPropertyValue("--color-card");
+    cssRoot.style.setProperty("--color-font", cardColor);
+  }
+
   updateLyric() {
-    // Get new lyric
     let newLyrics = lyricData.filter(
       (lyric) => lyric.lyric != this.state.lyric
     );
@@ -51,13 +59,38 @@ class App extends React.Component {
     this.updateColor();
   }
 
+  handleClick() {
+    // Ignore input while fading animating
+    if (!this.state.fadeInActive && !this.state.fadeOutActive) {
+      this.fadeOut();
+    }
+  }
+
+  handleTransitionEnd = (event) => {
+    if (this.state.fadeOutActive) {
+      this.setState({
+        fadeOutActive: false,
+        fadeInActive: true,
+      });
+      this.updateLyric();
+    } else if (this.state.fadeInActive) {
+      this.setState({
+        fadeInActive: false,
+      });
+    }
+  };
+
   render() {
     if (!this.state.lyric) {
       this.updateLyric();
     }
 
     return (
-      <div id="background-wrapper" className="fade-color fade-in-bg">
+      <div
+        id="background-wrapper"
+        className="fade-color fade-in-bg"
+        onTransitionEnd={this.handleTransitionEnd}
+      >
         <div id="quote-box">
           <div id="lyric-and-artist" className="fade-color fade-in-text">
             <p id="text">
@@ -92,8 +125,7 @@ class App extends React.Component {
               id="new-quote"
               className="button fade-color fade-in-bg"
               onClick={() => {
-                this.updateLyric();
-                this.updateColor();
+                this.handleClick();
               }}
             >
               <i className="fa-solid fa-music"></i>
