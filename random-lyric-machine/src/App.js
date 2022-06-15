@@ -93,7 +93,7 @@ class App extends React.Component {
         onTransitionEnd={this.handleTransitionEnd}
         onAnimationEnd={this.handleAnimationEnd}
       >
-        <div id="quote-box">
+        <div id="quote-box" className="container">
           <div id="lyric-and-artist" className="fade-color fade-in-text">
             <p id="text">
               <i className="fa-solid fa-quote-left"></i>

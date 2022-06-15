@@ -67,7 +67,7 @@ a:link {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 600px;
+  max-width: 600px;
   height: auto;
   margin: auto;
   padding: 2rem;
@@ -83,7 +83,7 @@ a:link {
 }
 
 #author {
-  padding: 1rem 0rem 1rem;
+  margin-bottom: 2rem;
   text-align: right;
   font-size: large;
   font-style: italic;
